@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let btn = CSButton(frame: CGRect(x: 30, y: 50, width: 150, height: 35))
+        self.view.addSubview(btn)
     }
 
 

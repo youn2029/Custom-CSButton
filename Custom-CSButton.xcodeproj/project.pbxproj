@@ -12,6 +12,7 @@
 		4E040975225F424A0029CECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E040973225F424A0029CECB /* Main.storyboard */; };
 		4E040977225F424B0029CECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E040976225F424B0029CECB /* Assets.xcassets */; };
 		4E04097A225F424B0029CECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E040978225F424B0029CECB /* LaunchScreen.storyboard */; };
+		4E040984226040E80029CECB /* CSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E040983226040E80029CECB /* CSButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4E040976225F424B0029CECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E040979225F424B0029CECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E04097B225F424B0029CECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E040983226040E80029CECB /* CSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				4E04096F225F424A0029CECB /* AppDelegate.swift */,
 				4E040971225F424A0029CECB /* ViewController.swift */,
+				4E040983226040E80029CECB /* CSButton.swift */,
 				4E040973225F424A0029CECB /* Main.storyboard */,
 				4E040976225F424B0029CECB /* Assets.xcassets */,
 				4E040978225F424B0029CECB /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E040972225F424A0029CECB /* ViewController.swift in Sources */,
+				4E040984226040E80029CECB /* CSButton.swift in Sources */,
 				4E040970225F424A0029CECB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +295,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seongho.Custom-CSButton";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seongho.Custom-CSButton";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
