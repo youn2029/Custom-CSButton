@@ -8,9 +8,46 @@
 
 import UIKit
 
+// 버튼 타임을 결정하는 열거형
+public enum CSButtonType {
+    case rect
+    case circle
+}
+
 class CSButton: UIButton {
     
-    // 스토리보드에서 생성된 버튼의 초기화 메소드
+    /*
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
+    var style: CSButtonType = .rect{
+        // didSet : 프로퍼티의 값이 변경된 직후에 실행되는 프로퍼티 옵저버
+        // willSet : 프로퍼티의 값이 변경되기 직전에 실행되는 프로퍼티 옵저버
+        didSet{
+            switch style {
+            case .rect :
+                self.backgroundColor = UIColor.black
+                self.layer.borderColor = UIColor.black.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 0
+                self.setTitleColor(UIColor.white, for: .normal)
+                self.setTitle("Rect Button", for: .normal)
+                
+            case .circle:
+                self.backgroundColor = UIColor.red
+                self.layer.borderColor = UIColor.blue.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 50        // 50만큼 둥글게 처리
+                self.setTitle("Circle Button", for: .normal)
+            }
+        }
+    }
+    
+    // 스토리보드에서 생성된 버튼의 초기화 메소드 (필수 구현 메소드)
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
@@ -21,6 +58,7 @@ class CSButton: UIButton {
         self.setTitle("버튼", for: .normal)
     }
     
+    // 지정 초기화 메소드
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,15 +68,30 @@ class CSButton: UIButton {
         self.setTitle("코드로 생성된 버튼", for: .normal)
     }
     
+    // 새로운 지정 초기화 메소드
     init(){
         super.init(frame: CGRect.zero)
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
+    // 편의 초기화 메소드
+    convenience init(type: CSButtonType){
+        self.init()
+        
+        switch type {
+            case .rect :
+                self.backgroundColor = UIColor.black
+                self.layer.borderColor = UIColor.black.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 0
+                self.setTitleColor(UIColor.white, for: .normal)
+                self.setTitle("Rect Button", for: .normal)
 
+            case .circle:
+                self.backgroundColor = UIColor.red
+                self.layer.borderColor = UIColor.blue.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 50        // 50만큼 둥글게 처리
+                self.setTitle("Circle Button", for: .normal)
+        }
+    }
 }
